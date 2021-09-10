@@ -252,7 +252,7 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 function get20s(array) {
 const get20sArray =[];
 for(let i = 0; i < array.length; i++){
-  if(array[i].includes(["1904 - 1989"])){
+  if(array.includes(["1904 - 1989"])){
     get20sArray.push(array[i]);
   }
 
