@@ -250,11 +250,14 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array) {
-get20sArray =[];
-const years = artists.split('1901, 1959') 
+const get20sArray =[];
+for(let i = 0; i < array.length; i++){
+  if(array[i].includes(["1904 - 1989"])){
+    get20sArray.push(array[i]);
+  }
 
-}
-
+return get20sArray;
+}}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -310,7 +313,7 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(array, number){
 const lotsOfPaintings =[];
-for(let i = 0; i <array.length; i++){
+for(let i = 0; i < array.length; i++){
   if(array[i]["paintings"] >= 100){
     lotsOfPaintings.push(array[i].name)
   }
