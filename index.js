@@ -220,7 +220,7 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
 
 artists[8].name = "Vincent Van Gogh"
 
-console.log(artists[8].name);
+// console.log(artists[8].name);
 
 
 
@@ -233,9 +233,10 @@ Use getArtistByIndex to do the following:
 
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, number) {
+  return `the artist at index ${array[number].id} is ${array[number].name}`
 }
+// So just curious, I know that parameters can be anything.. But I assumed the test would at least look at it ? I was able to write, and pass this test with swapping out number for index.. and vise versa. I suppose it really doesnt matter what that is called , more or less curious why the test doesnt care and if it really just doesnt matter what you call those params. Thanks to who ever grades this :D
 
 
 
@@ -248,8 +249,10 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
-  /*Your Code Here*/
+function get20s(array) {
+get20sArray =[];
+const years = artists.split('1901, 1959') 
+
 }
 
 
@@ -263,8 +266,9 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array) {
+  const removeItem = artists.shift();
+  return (artists.length);
 }
 
 
@@ -284,10 +288,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array) {
+artists.push({
+  id: 20,
+    name: "Rob Stetson", 
+    years: "1994 - 9/10",
+    genre: "Web Design", 
+    nationality: "Irish American",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus. Diam vel quam elementum pulvinar etiam non."
+});
+return array;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -297,9 +308,18 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array, number){
+const lotsOfPaintings =[];
+for(let i = 0; i <array.length; i++){
+  if(array[i]["paintings"] >= 100){
+    lotsOfPaintings.push(array[i].name)
+  }
 }
+return lotsOfPaintings;
+}
+
+
+
 
 
 /* ***** END OF TASKS ***** */
